@@ -11,6 +11,7 @@ Follow these steps to use the DICOM File Organizer:
 - Install the required libraries using:
 
 
+
 ### Instructions
 1. **Clone the repository or download the Python script.**
 2. **Prepare your DICOM data:**
@@ -24,9 +25,16 @@ Follow these steps to use the DICOM File Organizer:
   ```
 5. **Review the output:**
   - The script will organize the DICOM files into a folder structure based on Patient ID, Study Date, and Series Description.
+  - It will also generate a CSV file summarizing the DICOM file information with Patient ID, Study Date, and Series Description columns.
+
+### Generated CSV File
+The script will generate a CSV file named `patient_info.csv` containing the following columns:
+- Patient ID
+- Study Date
+- Series Description (Multiple descriptions separated by commas for each unique Patient ID and Study Date combination)
 
 ### Note
-- Ensure that the DICOM files contain the necessary tags: `PatientID`, `StudyDate`, and `SeriesDescription` for proper organization.
+- Ensure that the DICOM files contain the necessary tags: `PatientID`, `StudyDate`, and `SeriesDescription` for proper organization and CSV generation.
 - Adjust the code if your DICOM files have different tag information.
 
 ## Contributing
@@ -42,3 +50,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## Acknowledgments
 - The DICOM File Organizer script was created using the `pydicom` library.
+
