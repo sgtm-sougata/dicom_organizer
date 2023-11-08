@@ -3,6 +3,7 @@ import os
 import pydicom
 import shutil
 from create_csv import create_patient_info_csv
+
 # Path to the root directory containing DICOM files
 root_folder = os.path.join(os.getcwd(), "data")
 
@@ -26,6 +27,8 @@ for dirpath, dirnames, filenames in os.walk(root_folder):
                 patient_id = get_tag_value(dcm, "PatientID")
                 study_date = get_tag_value(dcm, "StudyDate")
                 series_desc = get_tag_value(dcm, "SeriesDescription")
+                series_desc = series_desc.replace('*', '_')
+
 
                 # Create directories if they don't exist
                 patient_dir = os.path.join(root_folder, patient_id)
